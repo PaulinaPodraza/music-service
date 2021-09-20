@@ -1,7 +1,11 @@
 .header {
-  padding: ($base-size * 5) 0 ($base-size * 8) 0;
-  background: url(../images/background.jpg);
-  color: $color-light;
+  padding: ($base-size * 32) 0 ($base-size * 20) 0;
+  background: linear-gradient(to bottom, transparent, $fourth-colour),
+    url(../images/background.jpg);
+  background-size: cover;
+  height: 120vh;
+  color: $first-colour;
+  display: flex;
 
   &__wrapper {
     position: relative;
@@ -12,44 +16,46 @@
 .logo {
   display: inline-block;
   line-height: 1;
+  font-weight: $font-bold;
+  font-family: $font-text;
 
   &__title {
-    margin: 0 0 $base-size 0;
-    font-size: ($base-size * 4);
-    font-family: $font-header;
-    font-weight: $font-light;
+    // margin: 0 0 $base-size * 3;
+    font-size: ($base-size * 10);
+    font-family: $font-text;
+    font-weight: 900;
     text-transform: uppercase;
+    letter-spacing: 100px;
+    margin: 0 auto;
+    text-align: center;
   }
 
   &__subtitle {
-    margin: 0;
-    font-size: ($base-size * 1.5);
-    font-weight: $font-light;
-    font-style: italic;
+    @extend .h1;
+    font-size: ($base-size * 2.2);
+    font-weight: $font-bold;
+    text-align: center;
+    letter-spacing: 6px;
+    line-height: 60px;
   }
 
 }
 
 .main-nav {
   position: absolute;
-  @include flex(row, flex-start, flex-start);
-  bottom: ($base-size * -8);
+  // @include flex(row, flex, center);
+  justify-content: center;
+  bottom: ($base-size * -20);
+  display: flex;
 
   a {
     @extend .h2;
-    color: $color-main;
+    color: $first-colour;
     text-decoration: none;
     margin-right: ($base-size * 2);
     text-align: center;
     padding: $base-size ($base-size * 2);
-    background: darken($color-dark, 5%);
-    border-top-left-radius: $radius;
-    border-top-right-radius: $radius;
-
-    &.active {
-      background: lighten($color-dark, 75%);
-    }
-
+    background: $fourth-colour;
   }
 
 }
